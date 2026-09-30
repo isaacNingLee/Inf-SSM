@@ -30,7 +30,6 @@ def train_one_epoch_seq(model: torch.nn.Module, criterion: DistillationLoss,
     if args.cosub:
         criterion = torch.nn.BCEWithLogitsLoss()
         
-    # debug
     count = 0
     correct = 0
     

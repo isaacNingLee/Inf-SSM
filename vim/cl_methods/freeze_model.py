@@ -28,7 +28,7 @@ def freeze_model(args, model):
         print(f'Freezing {num_freeze} out of {num_blocks} blocks')
 
 
-        # Freeze the first half of the blocks
+        # Freeze the first `freeze_ratio` fraction of the blocks
 
         if args.model.startswith('deit'):
             for idx in range(num_freeze):

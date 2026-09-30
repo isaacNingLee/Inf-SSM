@@ -18,14 +18,14 @@ def solve_P(A1, C1, A2, C2):
 
     denom = 1.0 - A_diag.unsqueeze(2) * A_diag.unsqueeze(1)
 
-    C_combined = torch.cat([C1, C2], dim=1)  # (B, N, 2D)
+    C_combined = torch.cat([C1, C2], dim=1)  # (B, 2D)
 
     Q = C_combined.unsqueeze(2) * C_combined.unsqueeze(1)
 
 
     P = Q / denom
 
-    # X is (B, 2D, 2D)
+    # P is (B, 2D, 2D)
     return P
 
 
@@ -96,7 +96,6 @@ def train_one_epoch_inf_ssm(model: torch.nn.Module, criterion: DistillationLoss,
     if args.cosub:
         criterion = torch.nn.BCEWithLogitsLoss()
 
-    # debug
     count = 0
     correct = 0
 
