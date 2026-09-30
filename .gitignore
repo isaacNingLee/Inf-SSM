@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*.so
+build/
+*.egg-info/
+.DS_Store
+
+# experiment artifacts
+logs/
+output/
+mlruns/
+wandb/
+dataset/
+checkpoints/
+models/
+*.pth
+*.out
+*.err
+
+# machine-specific scratch: cluster job scripts, absolute paths, verification runs
+local/
