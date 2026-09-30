@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 # Inf-SSM: Grassmannian (A, C) regularization. ImageNet-R, 5 tasks, seed 0.
+#
+# NOTE: REG_LAMBDA=750000 below is an early pilot value, not the one reported in the
+# paper. Table 12 (5-task ImageNet-R) uses REG_LAMBDA=1000000, as in imagenetr_5task.sh.
+# This script will not reproduce the paper's headline numbers; use imagenetr_5task.sh for that.
 
 export MODEL="state_ac_vim_small_patch16_224_bimambav2_final_pool_mean_abs_pos_embed_with_midclstok_div2"
 export BATCH_SIZE=128
